@@ -1,0 +1,22 @@
+{
+	"name": "micschk/silverstripe-signaturefield",
+	"description": "A signaturefield based on https://github.com/szimek/signature_pad",
+	"type": "silverstripe-module",
+	"keywords": ["silverstripe", "forms", "signature"],
+	"homepage": "http://github.com/micschk/silverstripe-signaturefield",
+	"authors": [
+	{
+		"name": "Michael van Schaik",
+		"email": "mic@restruct.nl"
+	}
+	],
+
+	"require":
+	{
+		"silverstripe/framework": "3.*"
+	},
+	"extra": {
+		"installer-name": "signaturefield"
+	}
+
+}

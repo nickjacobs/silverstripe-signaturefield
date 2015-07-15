@@ -1,0 +1,17 @@
+.signature input {
+	display: none;
+}
+
+.signature input + canvas {
+	background: #fff;
+	border: 1px solid #b3b3b3;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	vertical-align: bottom;
+}
+
+.signature input + canvas + button {
+	margin-left: 4px;
+	margin-bottom: 1px;
+}
