@@ -5,24 +5,25 @@
  * 
  * Form field for entering, saving, validating external urls.
  */
-class SignatureField extends TextField{
-	
-	// check for Chrome mobile: https://github.com/szimek/signature_pad/issues/89
-	// check for vector data: https://github.com/szimek/signature_pad/issues/44
+class SignatureField extends TextField
+{
+    
+    // check for Chrome mobile: https://github.com/szimek/signature_pad/issues/89
+    // check for vector data: https://github.com/szimek/signature_pad/issues/44
 
-	public function __construct($name, $title = null, $value = null) {
-		
-		Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.js');
-		Requirements::javascript(THIRDPARTY_DIR . '/jquery-entwine/dist/jquery.entwine-dist.js');
-		Requirements::javascript(SIGNATURE_MODULE_DIR . "/bower_components/signature_pad/signature_pad.js");
-		Requirements::javascript(SIGNATURE_MODULE_DIR . "/javascript/signature_pad.init.js");
-		Requirements::css(SIGNATURE_MODULE_DIR . "/css/signature.css");
-		
-		$this->addExtraClass('signature no-sigpad');
+    public function __construct($name, $title = null, $value = null)
+    {
+        Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.js');
+        Requirements::javascript(THIRDPARTY_DIR . '/jquery-entwine/dist/jquery.entwine-dist.js');
+        Requirements::javascript(SIGNATURE_MODULE_DIR . "/bower_components/signature_pad/signature_pad.js");
+        Requirements::javascript(SIGNATURE_MODULE_DIR . "/javascript/signature_pad.init.js");
+        Requirements::css(SIGNATURE_MODULE_DIR . "/css/signature.css");
+        
+        $this->addExtraClass('signature no-sigpad');
 
-		parent::__construct($name, $title, $value);
-	}
-	
+        parent::__construct($name, $title, $value);
+    }
+    
 //	public function Type() {
 //		return 'url text';
 //	}
@@ -63,10 +64,10 @@ class SignatureField extends TextField{
 //		}
 //	}
 
-	/**
-	 * Set additional attributes
-	 * @return array Attributes
-	 */
+    /**
+     * Set additional attributes
+     * @return array Attributes
+     */
 //	public function getAttributes() {
 //		$attributes = array(
 //			'placeholder' => $this->config['defaultparts']['scheme']."://example.com" //example url
@@ -84,10 +85,10 @@ class SignatureField extends TextField{
 //		);
 //	}
 
-	/**
-	 * Rebuild url on save
-	 * @param string $url
-	 */
+    /**
+     * Rebuild url on save
+     * @param string $url
+     */
 //	public function setValue($url) {
 //		if($url){
 //			$url = $this->rebuildURL($url);
@@ -95,13 +96,13 @@ class SignatureField extends TextField{
 //		parent::setValue($url);
 //	}
 
-	/**
-	 * Add config scheme, if missing.
-	 * Remove the parts of the url we don't want.
-	 * Set any defaults, if missing.
-	 * Remove any trailing slash, and rebuild.
-	 * @return string
-	 */
+    /**
+     * Add config scheme, if missing.
+     * Remove the parts of the url we don't want.
+     * Set any defaults, if missing.
+     * Remove any trailing slash, and rebuild.
+     * @return string
+     */
 //	protected function rebuildURL($url) {
 //		$defaults = $this->config['defaultparts'];
 //		if(!preg_match('#^[a-zA-Z]+://#', $url)){
@@ -127,9 +128,9 @@ class SignatureField extends TextField{
 //		return rtrim(http_build_url($defaults, $parts), "/");
 //	}
 
-	/**
-	 * Server side validation, using a regular expression.
-	 */
+    /**
+     * Server side validation, using a regular expression.
+     */
 //	public function validate($validator) {
 //		$this->value = trim($this->value);
 //		$regex = $this->config['validregex'];
@@ -143,5 +144,4 @@ class SignatureField extends TextField{
 //		}
 //		return true;
 //	}
-
 }
