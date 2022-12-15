@@ -1,13 +1,17 @@
 <?php
 
+namespace Micschk\SignatureField;
+
+use SilverStripe\Forms\TextField;
+
 /**
  * ExternalURLField
- * 
+ *
  * Form field for entering, saving, validating external urls.
  */
 class SignatureField extends TextField
 {
-    
+
     // check for Chrome mobile: https://github.com/szimek/signature_pad/issues/89
     // check for vector data: https://github.com/szimek/signature_pad/issues/44
 
@@ -18,12 +22,12 @@ class SignatureField extends TextField
         Requirements::javascript(SIGNATURE_MODULE_DIR . "/bower_components/signature_pad/signature_pad.js");
         Requirements::javascript(SIGNATURE_MODULE_DIR . "/javascript/signature_pad.init.js");
         Requirements::css(SIGNATURE_MODULE_DIR . "/css/signature.css");
-        
+
         $this->addExtraClass('signature no-sigpad');
 
         parent::__construct($name, $title, $value);
     }
-    
+
 //	public function Type() {
 //		return 'url text';
 //	}
