@@ -3,6 +3,7 @@
 namespace Micschk\SignatureField;
 
 use SilverStripe\Forms\TextField;
+use SilverStripe\View\Requirements;
 
 /**
  * ExternalURLField
@@ -17,11 +18,8 @@ class SignatureField extends TextField
 
     public function __construct($name, $title = null, $value = null)
     {
-        Requirements::javascript(THIRDPARTY_DIR . '/jquery/jquery.js');
-        Requirements::javascript(THIRDPARTY_DIR . '/jquery-entwine/dist/jquery.entwine-dist.js');
-        Requirements::javascript(SIGNATURE_MODULE_DIR . "/bower_components/signature_pad/signature_pad.js");
-        Requirements::javascript(SIGNATURE_MODULE_DIR . "/javascript/signature_pad.init.js");
-        Requirements::css(SIGNATURE_MODULE_DIR . "/css/signature.css");
+        Requirements::javascript('micschk/silverstripe-signaturefield: /javascript/dist/main.js');
+        Requirements::css('micschk/silverstripe-signaturefield: /css/signature.css');
 
         $this->addExtraClass('signature no-sigpad');
 

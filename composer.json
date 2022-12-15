@@ -16,6 +16,10 @@
 		"silverstripe/framework": "^4.0"
 	},
 	"extra": {
-		"installer-name": "signaturefield"
+		"installer-name": "signaturefield",
+        "expose": [
+            "css",
+            "javascript"
+        ]
 	}
 }

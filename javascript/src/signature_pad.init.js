@@ -1,3 +1,5 @@
+import SignaturePad from "signature_pad";
+
 jQuery.entwine("signature", function($) {
 
 	$("input.signature.no-sigpad").entwine({
@@ -10,16 +12,18 @@ jQuery.entwine("signature", function($) {
 			if(this.val()!=''){
 				signaturePad.fromDataURL(this.val());
 			}
-			signaturePad.onEnd = function(){ $input.val( signaturePad.toDataURL() ); }
+			signaturePad.addEventListener("endStroke",() => {
+                $input.val( signaturePad.toDataURL() );
+            });
 			// add clear button
 			var $clearbtn = $('<button><span>Clear</span></button>');
-			$clearbtn.click(function(event){ 
+			$clearbtn.click(function(event){
 				signaturePad.clear();
 				$input.val('');
 			});
 			// insert button
 			$canvas.after($clearbtn);
-			
+
 			// Monkey patch to expose svg data (http://me.dt.in.th/page/JavaScript-override/)
 			// https://github.com/szimek/signature_pad/issues/44
 //			var originalSaveResults = test.saveResults
@@ -45,7 +49,7 @@ jQuery.entwine("signature", function($) {
 //			// Unbinds all event handlers (onunmatch?)
 //			signaturePad.off();
 		},
-		
+
 	});
 });
 

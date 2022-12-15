@@ -2,8 +2,10 @@
 
 namespace Micschk\SignatureField;
 
-use SilverStripe\Forms\FormField;
-class Signature extends FormField
+use SilverStripe\ORM\DB;
+use SilverStripe\ORM\FieldType\DBString;
+
+class Signature extends DBString
 {
 
     /**
@@ -24,7 +26,7 @@ class Signature extends FormField
             'parts' => $parts
         );
 
-        DB::requireField($this->tableName, $this->name, $values, $this->default);
+        DB::require_field($this->tableName, $this->name, $values, $this->default);
     }
 
     /**
