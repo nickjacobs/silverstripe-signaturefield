@@ -1,8 +1,13 @@
 <?php
 
-class Signature extends StringField
+namespace Micschk\SignatureField;
+
+use SilverStripe\ORM\DB;
+use SilverStripe\ORM\FieldType\DBString;
+
+class Signature extends DBString
 {
-    
+
     /**
      * (non-PHPdoc)
      * @see DBField::requireField()
@@ -21,9 +26,9 @@ class Signature extends StringField
             'parts' => $parts
         );
 
-        DB::requireField($this->tableName, $this->name, $values, $this->default);
+        DB::require_field($this->tableName, $this->name, $values, $this->default);
     }
-    
+
     /**
      * Scaffold the ExternalURLField for this ExternalURL
      */
@@ -34,7 +39,7 @@ class Signature extends StringField
 
         return $field;
     }
-    
+
     // just return an image with the data-URI
     public function forTemplate()
     {
@@ -43,7 +48,7 @@ class Signature extends StringField
             //return $this->URL();
         }
     }
-    
+
     // output/write to file ($output = absolute output path or 'browser' for output to browser)
     public function toFile($output = 'tobrowser')
     {

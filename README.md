@@ -11,10 +11,12 @@ A silverstripe signature form field based on https://github.com/szimek/signature
 A signaturefield will be scaffolded if field is set to 'Signature' (field holds base64 png image of signature)
 
 ```php
+use Micschk\SignatureField\Signature;
+
 class Contract extends DataObject {
 
 	private static $db = array(
-		'Signature' => 'Signature',
+		'Signature' => Signature::class,
 	);
 
 }
@@ -23,10 +25,13 @@ class Contract extends DataObject {
 Or explicitly add a SignatureField to a form (eg for non-scafolded formfields or front-end)
 
 ```php
+use Micschk\SignatureField\SignatureField;
+
+...
 
 	public function getCMSFields() {
 		$fields = parent::getCMSFields();
-		
+
 		$fields->addFieldToTab('Root.Main',
 				SignatureField::create('Signature')
 			);
@@ -35,3 +40,10 @@ Or explicitly add a SignatureField to a form (eg for non-scafolded formfields or
 	}
 ```
 
+## Development
+
+The js is bundled using parcel.js. To make javascript changes
+
+1. run `yarn install` to install dependencies.
+2. make requisite changes in `javascript/src/signature_pad.init.js`
+3. run `yarn build` to compile changes

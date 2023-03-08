@@ -1,7 +1,7 @@
 {
 	"name": "micschk/silverstripe-signaturefield",
 	"description": "A signaturefield based on https://github.com/szimek/signature_pad",
-	"type": "silverstripe-module",
+	"type": "silverstripe-vendormodule",
 	"keywords": ["silverstripe", "forms", "signature"],
 	"homepage": "http://github.com/micschk/silverstripe-signaturefield",
 	"authors": [
@@ -13,10 +13,13 @@
 
 	"require":
 	{
-		"silverstripe/framework": "3.*"
+		"silverstripe/framework": "^4.0"
 	},
 	"extra": {
-		"installer-name": "signaturefield"
+		"installer-name": "signaturefield",
+        "expose": [
+            "css",
+            "javascript"
+        ]
 	}
-
 }
