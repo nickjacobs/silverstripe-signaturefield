@@ -2,13 +2,13 @@
   "name": "silverstripe-signaturefield",
   "version": "1.0.0",
   "description": "A silverstripe signature form field based on https://github.com/szimek/signature_pad",
-  "source": "javascript/src/signature_pad.init.js",
-  "main": "javascript/dist/main.js",
+  "main": "javascript/dist/signature_pad.init.js",
   "repository": "https://github.com/micschk/silverstripe-signaturefield",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "author": "Michael van Schaik <mic@restruct.nl>",
   "license": "MIT",
   "devDependencies": {
+    "jquery": "^3.6.3",
     "parcel": "^2.8.2",
     "signature_pad": "^4.1.4"
   },
@@ -18,7 +18,13 @@
   },
   "targets": {
     "main": {
+      "source": "javascript/src/signature_pad.init.js",
       "includeNodeModules": true
+    },
+    "jquery": {
+      "source": "javascript/src/jquery.js",
+      "includeNodeModules": true,
+      "distDir": "javascript/dist"
     }
   }
 }

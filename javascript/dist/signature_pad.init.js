@@ -548,4 +548,4 @@ jQuery.entwine("signature", function($) {
 });
 
 
-//# sourceMappingURL=main.js.map
+//# sourceMappingURL=signature_pad.init.js.map

@@ -3,23 +3,34 @@
 	"description": "A signaturefield based on https://github.com/szimek/signature_pad",
 	"type": "silverstripe-vendormodule",
 	"keywords": ["silverstripe", "forms", "signature"],
+    "license": "MIT",
 	"homepage": "http://github.com/micschk/silverstripe-signaturefield",
 	"authors": [
-	{
-		"name": "Michael van Schaik",
-		"email": "mic@restruct.nl"
-	}
+        {
+            "name": "Michael van Schaik",
+            "email": "mic@restruct.nl"
+        },
+        {
+            "name": "David Toews",
+            "email": "davejtoews@gmail.com"
+        }
 	],
-
 	"require":
 	{
-		"silverstripe/framework": "^4.0"
+		"silverstripe/framework": "^4.0",
+		"silverstripe/admin": "^1.1"
 	},
 	"extra": {
-		"installer-name": "signaturefield",
         "expose": [
             "css",
             "javascript"
         ]
-	}
+    },
+    "autoload": {
+        "psr-4": {
+            "Micschk\\SignatureField\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

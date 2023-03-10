@@ -1,12 +1,16 @@
 # silverstripe-signaturefield
 
-## NOTE: the field is working fine as is, but I'm thinking of switching the saving to db as vector (svg) instead of png data because of size. Then the signature pad may be switched to [jquery signature pad](http://thomasjbradley.ca/lab/signature-pad/).
-
 A silverstripe signature form field based on https://github.com/szimek/signature_pad
 
 ![screenshot](images/signaturefield.png)
 
-### Usage
+## Installation
+
+```bash
+composer require micschk/silverstripe-signaturefield
+```
+
+## Usage
 
 A signaturefield will be scaffolded if field is set to 'Signature' (field holds base64 png image of signature)
 
@@ -39,6 +43,19 @@ use Micschk\SignatureField\SignatureField;
 		return $fields;
 	}
 ```
+
+### Front end use
+
+If using this field on a front end form, outside of the CMS, jQuery is required. By default this module will load a packaged version of jQuery. This may conflict with existing versions if you have separately installed jQuery on your front end. To remove the included version of jQuery and make use of your own version, add the following to your yaml config
+
+```yml
+Micschk\SignatureField\SignatureField:
+  include_jquery: false
+```
+
+## Known Issues
+
+Scaling issues may occur on high DPI screens: https://github.com/szimek/signature_pad/issues/679
 
 ## Development
 

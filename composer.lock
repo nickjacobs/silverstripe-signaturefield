@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ebd9e50b0a7b345184e6b31a862d8bb3",
+    "content-hash": "499235723bd553f2791bae488db52cf6",
     "packages": [
         {
             "name": "bramus/ansi-php",
@@ -2112,6 +2112,77 @@
             "time": "2019-03-08T08:55:37+00:00"
         },
         {
+            "name": "silverstripe/admin",
+            "version": "1.12.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe/silverstripe-admin.git",
+                "reference": "99082e808ab7428e2a226da42fa2c5dd2284ff89"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-admin/zipball/99082e808ab7428e2a226da42fa2c5dd2284ff89",
+                "reference": "99082e808ab7428e2a226da42fa2c5dd2284ff89",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ^8.0",
+                "silverstripe/framework": "^4.10",
+                "silverstripe/vendor-plugin": "^1.0",
+                "silverstripe/versioned": "^1@dev"
+            },
+            "require-dev": {
+                "monolog/monolog": "~1.16",
+                "nikic/php-parser": "^3 || ^4",
+                "phpunit/phpunit": "^9.5",
+                "silverstripe/frameworktest": "^0.4.3",
+                "squizlabs/php_codesniffer": "^3"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "expose": [
+                    "client/dist",
+                    "client/lang",
+                    "thirdparty"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "SilverStripe\\Admin\\": [
+                        "code/",
+                        "_legacy/"
+                    ],
+                    "SilverStripe\\Admin\\Tests\\": "tests/php/",
+                    "SilverStripe\\Admin\\Tests\\Behat\\Context\\": "tests/behat/src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "SilverStripe",
+                    "homepage": "http://silverstripe.com"
+                },
+                {
+                    "name": "The SilverStripe Community",
+                    "homepage": "http://silverstripe.org"
+                }
+            ],
+            "description": "SilverStripe admin interface",
+            "homepage": "http://silverstripe.org",
+            "keywords": [
+                "admin",
+                "silverstripe"
+            ],
+            "support": {
+                "issues": "https://github.com/silverstripe/silverstripe-admin/issues",
+                "source": "https://github.com/silverstripe/silverstripe-admin/tree/1.12.2"
+            },
+            "time": "2023-02-14T02:36:17+00:00"
+        },
+        {
             "name": "silverstripe/assets",
             "version": "1.11.1",
             "source": {
@@ -2402,6 +2473,67 @@
                 "source": "https://github.com/silverstripe/vendor-plugin/tree/1.6.0"
             },
             "time": "2022-05-02T07:31:43+00:00"
+        },
+        {
+            "name": "silverstripe/versioned",
+            "version": "1.12.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe/silverstripe-versioned.git",
+                "reference": "565af2cfecb01c9eb3758e8d68c40c99ce612b04"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-versioned/zipball/565af2cfecb01c9eb3758e8d68c40c99ce612b04",
+                "reference": "565af2cfecb01c9eb3758e8d68c40c99ce612b04",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ^8.0",
+                "silverstripe/framework": "^4.10",
+                "silverstripe/vendor-plugin": "^1",
+                "symfony/cache": "^3.4 || ^4"
+            },
+            "require-dev": {
+                "silverstripe/graphql": "^3.5 || ^4",
+                "silverstripe/recipe-testing": "^2",
+                "squizlabs/php_codesniffer": "^3"
+            },
+            "type": "silverstripe-vendormodule",
+            "autoload": {
+                "psr-4": {
+                    "SilverStripe\\Versioned\\": [
+                        "src/",
+                        "_legacy/"
+                    ],
+                    "SilverStripe\\Versioned\\Tests\\": "tests/php/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "SilverStripe",
+                    "homepage": "http://silverstripe.com"
+                },
+                {
+                    "name": "The SilverStripe Community",
+                    "homepage": "http://silverstripe.org"
+                }
+            ],
+            "description": "SilverStripe Versioned component",
+            "homepage": "http://silverstripe.org",
+            "keywords": [
+                "silverstripe",
+                "versioned"
+            ],
+            "support": {
+                "issues": "https://github.com/silverstripe/silverstripe-versioned/issues",
+                "source": "https://github.com/silverstripe/silverstripe-versioned/tree/1.12.0"
+            },
+            "time": "2022-11-10T01:56:20+00:00"
         },
         {
             "name": "sminnee/callbacklist",
@@ -4105,9 +4237,9 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": [],
-    "prefer-stable": false,
+    "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
