@@ -21,12 +21,12 @@ class SignatureField extends TextField
     {
         if (Controller::has_curr() && !Controller::curr() instanceof LeftAndMain) {
             if ($this->config()->include_jquery) {
-                Requirements::javascript('davejtoews/silverstripe-signaturefield: /javascript/dist/jquery.js');
+                Requirements::javascript('micschk/silverstripe-signaturefield: /javascript/dist/jquery.js');
             }
             Requirements::javascript('silverstripe/admin: thirdparty/jquery-entwine/jquery.entwine.js');
         }
-        Requirements::javascript('davejtoews/silverstripe-signaturefield: /javascript/dist/signature_pad.init.js');
-        Requirements::css('davejtoews/silverstripe-signaturefield: /css/signature.css');
+        Requirements::javascript('micschk/silverstripe-signaturefield: /javascript/dist/signature_pad.init.js');
+        Requirements::css('micschk/silverstripe-signaturefield: /css/signature.css');
 
         $this->addExtraClass('signature no-sigpad');
 
