@@ -18,7 +18,7 @@
 	"require":
 	{
 		"silverstripe/framework": "^5.0",
-		"silverstripe/admin": "^1.1"
+		"silverstripe/admin": "^2.0"
 	},
 	"extra": {
         "expose": [
