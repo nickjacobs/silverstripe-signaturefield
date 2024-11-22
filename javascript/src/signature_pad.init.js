@@ -28,7 +28,7 @@ jQuery.entwine("signature", function($) {
                 $input.val( signaturePad.toDataURL() );
             });
 			// add clear button
-			var $clearbtn = $('<div class="clear-btn"><span>Clear</span></div>');
+			var $clearbtn = $('<div class="signaturefield-clear-btn"><span>Clear</span></div>');
 			$clearbtn.click(function(event){
 				signaturePad.clear();
 				$input.val('');
