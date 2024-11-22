@@ -507,13 +507,22 @@ jQuery.entwine("signature", function($) {
             var $canvas = $("<canvas></canvas>");
             // insert canvas & create pad
             $input.after($canvas);
+            // Dynamically set the canvas width to match its parent
+            var updateCanvasWidth = function() {
+                var parentWidth = $canvas.parent().width(); // Get the parent element's width
+                $canvas.attr("width", parentWidth); // Set canvas width
+                $canvas.attr("height", 200); // Set canvas height if needed
+            };
+            // Update canvas width initially and on window resize
+            updateCanvasWidth();
+            $(window).on("resize", updateCanvasWidth);
             var signaturePad = new (0, $d7070a1a72da4ff8$export$2e2bcd8739ae039)($canvas[0]);
             if (this.val() != "") signaturePad.fromDataURL(this.val());
             signaturePad.addEventListener("endStroke", ()=>{
                 $input.val(signaturePad.toDataURL());
             });
             // add clear button
-            var $clearbtn = $("<button><span>Clear</span></button>");
+            var $clearbtn = $('<div class="clear-btn"><span>Clear</span></div>');
             $clearbtn.click(function(event) {
                 signaturePad.clear();
                 $input.val("");
