@@ -511,15 +511,15 @@ jQuery.entwine("signature", function($) {
             function syncCanvasSize() {
                 const canvas = $canvas[0];
                 const rect = canvas.getBoundingClientRect();
-                if (rect.width > 0 && rect.height > 0) {
-                    canvas.width = rect.width;
-                    canvas.height = rect.height;
-                }
+                canvas.width = rect.width;
+                canvas.height = rect.height;
             }
-            // Defer initial sync until after layout
-            $(function() {
-                requestAnimationFrame(syncCanvasSize);
-            });
+            const pollCanvasVisible = setInterval(()=>{
+                if ($canvas.is(":visible")) {
+                    syncCanvasSize();
+                    clearInterval(pollCanvasVisible);
+                }
+            }, 100);
             $(window).on("resize", syncCanvasSize);
             $input.on("focus", syncCanvasSize);
             var signaturePad = new (0, $d7070a1a72da4ff8$export$2e2bcd8739ae039)($canvas[0]);
