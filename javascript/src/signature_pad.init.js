@@ -5,20 +5,21 @@ jQuery.entwine("signature", function($) {
 	$("input.signature.no-sigpad").entwine({
 		onmatch: function() {
 			var $input = this; // = jquery object
-			var $canvas = $('<canvas></canvas>');
+            var $canvas = $('<canvas class="signature-canvas"></canvas>');
 			// insert canvas & create pad
 			$input.after($canvas);
 
             // Dynamically set the canvas width to match its parent
-            // var updateCanvasWidth = function() {
-            //     var parentWidth = $canvas.parent().width(); // Get the parent element's width
-            //     $canvas.attr('width', parentWidth); // Set canvas width
-            //     $canvas.attr('height', 200); // Set canvas height if needed
-            // };
+            function syncCanvasSize() {
+                const canvas = $canvas[0];
+                const rect = canvas.getBoundingClientRect(); // get CSS-rendered size
+                canvas.width = rect.width;
+                canvas.height = rect.height;
+            }
 
-            // Update canvas width initially and on window resize
-            //updateCanvasWidth();
-            //$(window).on('resize', updateCanvasWidth);
+            // Initial sync
+            syncCanvasSize();
+            $(window).on('resize', syncCanvasSize);
 
             var signaturePad = new SignaturePad($canvas[0]);
 			if(this.val()!=''){
