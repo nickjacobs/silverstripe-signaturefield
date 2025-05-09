@@ -19,7 +19,7 @@ jQuery.entwine("signature", function($) {
 
             // Initial sync
             $(function () {
-                setTimeout(syncCanvasSize, 0); // defer to next frame
+                setTimeout(syncCanvasSize, 50); // defer to next frame
             });
             $(window).on('resize', syncCanvasSize);
 
