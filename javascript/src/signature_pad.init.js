@@ -10,15 +10,15 @@ jQuery.entwine("signature", function($) {
 			$input.after($canvas);
 
             // Dynamically set the canvas width to match its parent
-            var updateCanvasWidth = function() {
-                var parentWidth = $canvas.parent().width(); // Get the parent element's width
-                $canvas.attr('width', parentWidth); // Set canvas width
-                $canvas.attr('height', 200); // Set canvas height if needed
-            };
+            // var updateCanvasWidth = function() {
+            //     var parentWidth = $canvas.parent().width(); // Get the parent element's width
+            //     $canvas.attr('width', parentWidth); // Set canvas width
+            //     $canvas.attr('height', 200); // Set canvas height if needed
+            // };
 
             // Update canvas width initially and on window resize
-            updateCanvasWidth();
-            $(window).on('resize', updateCanvasWidth);
+            //updateCanvasWidth();
+            //$(window).on('resize', updateCanvasWidth);
 
             var signaturePad = new SignaturePad($canvas[0]);
 			if(this.val()!=''){
