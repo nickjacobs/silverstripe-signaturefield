@@ -18,7 +18,9 @@ jQuery.entwine("signature", function($) {
             }
 
             // Initial sync
-            syncCanvasSize();
+            $(function () {
+                setTimeout(syncCanvasSize, 0); // defer to next frame
+            });
             $(window).on('resize', syncCanvasSize);
 
             var signaturePad = new SignaturePad($canvas[0]);
